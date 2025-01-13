@@ -1,0 +1,10 @@
+INSERT INTO VaccinationHistory (ChildID, VaccineID, FirstDate, LotNumber, Provider, LocationID) VALUES (25, 1, '2023-04-14', 'LOT9434', 'Govt Clinic', 76);
+INSERT INTO VaccinationHistory (ChildID, VaccineID, FirstDate, LotNumber, Provider, LocationID) VALUES (13, 9, '2023-02-12', 'LOT7173', 'Govt Clinic', 87);
+INSERT INTO VaccinationHistory (ChildID, VaccineID, FirstDate, LotNumber, Provider, LocationID) VALUES (80, 11, '2023-12-20', 'LOT9044', 'Govt Clinic', 49);
+INSERT INTO VaccinationHistory (ChildID, VaccineID, FirstDate, LotNumber, Provider, LocationID) VALUES (63, 17, '2023-07-23', 'LOT3753', 'Private Health Center', 29);
+INSERT INTO VaccinationHistory (ChildID, VaccineID, FirstDate, LotNumber, Provider, LocationID) VALUES (76, 14, '2023-10-13', 'LOT2122', 'Govt Clinic', 20);
+INSERT INTO VaccinationHistory (ChildID, VaccineID, FirstDate, LotNumber, Provider, LocationID) VALUES (43, 9, '2023-04-13', 'LOT5787', 'Govt Clinic', 25);
+INSERT INTO VaccinationHistory (ChildID, VaccineID, FirstDate, LotNumber, Provider, LocationID) VALUES (83, 12, '2023-06-10', 'LOT6779', 'Private Health Center', 97);
+INSERT INTO VaccinationHistory (ChildID, VaccineID, FirstDate, LotNumber, Provider, LocationID) VALUES (7, 9, '2023-06-21', 'LOT6846', 'Private Health Center', 8);
+INSERT INTO VaccinationHistory (ChildID, VaccineID, FirstDate, LotNumber, Provider, LocationID) VALUES (74, 14, '2023-05-22', 'LOT7108', 'Private Health Center', 57);
+INSERT INTO VaccinationHistory (ChildID, VaccineID, FirstDate, LotNumber, Provider, LocationID) VALUES (21, 10, '2023-05-29', 'LOT1378', 'Private Health Center', 80);
