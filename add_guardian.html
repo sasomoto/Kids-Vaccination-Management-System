@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Guardian</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Add Guardian</h1>
+        <form action="/add-guardian" method="POST" class="add-guardian-form">
+            <div class="form-group">
+                <label for="guardian_name">Name:</label>
+                <input type="text" id="guardian_name" name="guardian_name" required>
+            </div>
+            <div class="form-group">
+                <label for="guardian_contact">Contact:</label>
+                <input type="text" id="guardian_contact" name="guardian_contact" required>
+            </div>
+            <button type="submit" class="btn-submit">Add Guardian</button>
+        </form>
+        <a href="/guardians" class="btn-back">Back to Guardians List</a>
+    </div>
+</body>
+</html>
+

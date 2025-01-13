@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Vaccine</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Add Vaccine</h1>
+        <form action="/add-vaccine" method="POST" class="add-vaccine-form">
+            <div class="form-group">
+                <label for="vaccine_name">Vaccine Name:</label>
+                <input type="text" id="vaccine_name" name="vaccine_name" required>
+            </div>
+            <div class="form-group">
+                <label for="recommended_age_range">Recommended Age Range:</label>
+                <input type="text" id="recommended_age_range" name="recommended_age_range" required>
+            </div>
+            <div class="form-group">
+                <label for="exclusions">Exclusions:</label>
+                <input type="text" id="exclusions" name="exclusions">
+            </div>
+            <div class="form-group">
+                <label for="v_cost">Vaccine Cost:</label>
+                <input type="number" step="0.01" id="v_cost" name="v_cost" required>
+            </div>
+            <div class="form-group">
+                <label for="hospital_id">Hospital:</label>
+                <select id="hospital_id" name="hospital_id" required>
+                    <option value="">Select a Hospital</option>
+                    {% for hospital in hospitals %}
+                    <option value="{{ hospital.HospitalID }}">{{ hospital.H_Name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="btn-submit">Add Vaccine</button>
+        </form>
+        <a href="/vaccines" class="btn-back">Back to Vaccines List</a>
+    </div>
+</body>
+</html>
+
+
+

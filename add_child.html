@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Child</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Add Child</h1>
+        <form action="/add-child" method="POST" class="add-child-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="guardian_id">Guardian:</label>
+                <select id="guardian_id" name="guardian_id" required>
+                    {% for guardian in guardians %}
+                    <option value="{{ guardian.GuardianID }}">{{ guardian.GuardianName }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <input type="text" id="gender" name="gender" required>
+            </div>
+            <div class="form-group">
+                <label for="allergies">Allergies:</label>
+                <input type="text" id="allergies" name="allergies">
+            </div>
+            <button type="submit" class="btn-submit">Add Child</button>
+        </form>
+        <a href="/children" class="btn-back">Back to Child List</a>
+    </div>
+</body>
+</html>
+
+

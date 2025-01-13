@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Center-align all text */
+        body, .container, nav ul {
+            text-align: center;
+        }
+
+        /* Slightly larger font sizes */
+        body {
+            font-size: 18px;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        nav ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 10px 0; /* Adds spacing between buttons */
+        }
+
+        nav ul li a {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            font-weight: bold;
+        }
+
+        /* Fade-in animation for the container */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        /* Generate random colors for buttons */
+        nav ul li a:nth-child(1) { background-color: #c83818; }
+        nav ul li a:nth-child(2) { background-color: #33FF57; }
+        nav ul li a:nth-child(3) { background-color: #3357FF; }
+        nav ul li a:nth-child(4) { background-color: #FF33A1; }
+        nav ul li a:nth-child(5) { background-color: #A133FF; }
+        nav ul li a:nth-child(6) { background-color: #33FFF2; }
+        nav ul li a:nth-child(7) { background-color: #FFCC33; }
+        nav ul li a:nth-child(8) { background-color: #CC33FF; }
+        nav ul li a:nth-child(9) { background-color: #33FFCC; }
+        nav ul li a:nth-child(10) { background-color: #FF6633; }
+        nav ul li a:nth-child(11) { background-color: #66FF33; }
+
+        /* Hover effect */
+        nav ul li a:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Children Vaccination Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="/children">View Children</a></li>
+                <li><a href="/add-child">Add Child</a></li>
+                <li><a href="/guardians">View Guardians</a></li>
+                <li><a href="/add-guardian">Add Guardian</a></li>
+                <li><a href="/vaccines">View Vaccines</a></li>
+                <li><a href="/add-vaccine">Add Vaccine</a></li>
+                <li><a href="/vaccination-history">Vaccination History</a></li>
+                <li><a href="/add-vaccination">Add Vaccination</a></li>
+                <li><a href="/inventory">Vaccine Inventory</a></li>
+                <li><a href="/adjust-inventory">Adjust Inventory</a></li>
+                <li><a href="/consent-form">Consent Form</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

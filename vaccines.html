@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaccine List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Vaccine List</h1>
+        <div class="vaccines-table-container">
+            <table class="vaccines-table">
+                <thead>
+                    <tr>
+                        <th>Vaccine ID</th>
+                        <th>Vaccine Name</th>
+                        <th>Recommended Age Range</th>
+                        <th>Exclusions</th>
+                        <th>Vaccine Cost</th>
+                        <th>Hospital ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for vaccine in vaccines %}
+                    <tr>
+                        <td>{{ vaccine.VaccineID }}</td>
+                        <td>{{ vaccine.VaccineName }}</td>
+                        <td>{{ vaccine.RecommendedAgeRange }}</td>
+                        <td>{{ vaccine.Exclusions }}</td>
+                        <td>{{ vaccine.V_Cost }}</td>
+                        <td>{{ vaccine.HospitalID }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <a href="/add-vaccine" class="btn-submit">Add New Vaccine</a>
+    </div>
+</body>
+</html>
+
+
+

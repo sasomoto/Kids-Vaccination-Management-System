@@ -1,0 +1,70 @@
+consent_form.html:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consent Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Consent Form</h1>
+        <form action="/add-consent" method="POST" class="consent-form">
+            <div class="form-group">
+                <label for="child_id">Child:</label>
+                <select id="child_id" name="child_id" required>
+                    {% for child in children %}
+                    <option value="{{ child.ChildID }}">{{ child.ChildName }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="vaccine_id">Vaccine:</label>
+                <select id="vaccine_id" name="vaccine_id" required>
+                    {% for vaccine in vaccines %}
+                    <option value="{{ vaccine.VaccineID }}">{{ vaccine.VaccineName }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date_given">Date Given:</label>
+                <input type="date" id="date_given" name="date_given" required>
+            </div>
+            <div class="form-group">
+                <p>
+                    I, the undersigned, being the parent/legal guardian of the above-named child, confirm that:
+                </p>
+                <ol>
+                    <li>
+                        <strong>Information Provided:</strong> I have been provided with detailed information about the vaccine, including its purpose, potential benefits, risks, and possible side effects.
+                    </li>
+                    <li>
+                        <strong>Opportunity for Questions:</strong> I have had the opportunity to ask questions about the vaccine and have received answers to my satisfaction.
+                    </li>
+                    <li>
+                        <strong>Voluntary Consent:</strong> I understand that vaccination is voluntary and that I can refuse or withdraw consent at any time before the vaccine is administered.
+                    </li>
+                    <li>
+                        <strong>Health Status:</strong> I have disclosed all relevant health conditions and allergies of the child to the healthcare provider.
+                    </li>
+                    <li>
+                        <strong>Agreement to Vaccination:</strong> I consent to the administration of the vaccine to my child as listed above.
+                    </li>
+                    <li>
+                        <strong>Liability:</strong> I understand that the healthcare provider administering the vaccine is acting in accordance with standard medical practice and regulations.
+                    </li>
+                </ol>
+                <div class="form-group">
+                    <input type="checkbox" id="consent_checkbox" name="consent_checkbox" required>
+                    <label for="consent_checkbox">Yes, I Consent</label>
+                </div>
+            </div>
+            <button type="submit" class="btn-submit">Submit Consent</button>
+        </form>
+        <a href="/vaccination-history" class="btn-back">Back to Vaccination History</a>
+    </div>
+</body>
+</html>
+

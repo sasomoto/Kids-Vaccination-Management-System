@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Vaccination Record</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Add Vaccination Record</h1>
+        <form action="/add-vaccination" method="POST" class="add-vaccination-form">
+            <div class="form-group">
+                <label for="child_id">Child ID:</label>
+                <input type="number" id="child_id" name="child_id" required>
+            </div>
+            <div class="form-group">
+                <label for="vaccine_id">Vaccine Name:</label>
+                <select id="vaccine_id" name="vaccine_id" required>
+                    {% for vaccine in vaccines %}
+                    <option value="{{ vaccine.VaccineID }}">{{ vaccine.VaccineName }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="vaccination_date">Vaccination Date:</label>
+                <input type="date" id="vaccination_date" name="vaccination_date" required>
+            </div>
+            <div class="form-group">
+                <label for="lot_number">Lot Number:</label>
+                <input type="text" id="lot_number" name="lot_number" required>
+            </div>
+            <div class="form-group">
+                <label for="provider">Provider:</label>
+                <select id="provider" name="provider" required>
+                    <option value="Government Clinic">Government Clinic</option>
+                    <option value="Private Health Center">Private Health Center</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-submit">Add Vaccination</button>
+        </form>
+        <a href="/vaccination-history" class="btn-back">Back to Vaccination History</a>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

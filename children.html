@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Children List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Children List</h1>
+        <table class="children-table">
+            <thead>
+                <tr>
+                    <th>Child ID</th>
+                    <th>Name</th>
+                    <th>Date of Birth</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                    <th>Guardian</th>
+                    <th>Allergies</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for child in children %}
+                <tr>
+                    <td>{{ child.ChildID }}</td>
+                    <td>{{ child.ChildName }}</td>
+                    <td>{{ child.ChildDOB }}</td>
+                    <td>{{ child.ChildGender }}</td>
+                    <td>{{ child.ChildAge }}</td>
+                    <td>{{ child.GuardianName }}</td> <!-- Fixed here -->
+                    <td>{{ child.Allergies }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/add-child" class="btn-submit">Add New Child</a>
+    </div>
+</body>
+</html>
+
+
