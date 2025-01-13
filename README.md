@@ -21,3 +21,26 @@ Use Cases:
 Designed for hospitals, clinics, and public health departments to manage vaccination drives effectively.
 Ensures accurate tracking of children's vaccination schedules, inventory levels, and hospital records.
 This project demonstrates full-stack development, showcasing database design, backend API creation, and frontend user experience, making it ideal for real-world applications.
+
+Structure
+
+KidsVaccinationSystem/
+├── app.py and db.py
+├── blueprints/
+│   ├── add_child.py
+│   ├── add_guardian.py
+│   ├── ...
+├── templates/
+│   ├── home.html
+│   ├── add_child.html
+│   ├── ...
+├── static/
+│   ├── style.css
+│   ├── script.js
+├── sql/
+│   ├── create_tables.sql
+│   ├── insert_data.sql
+│   ├── triggers_procedures.sql
+├── requirements.txt
+├── README.md
+└── .gitignore
